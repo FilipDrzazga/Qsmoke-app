@@ -12,43 +12,48 @@ const tl = new TimelineMax({
     delay: 0.5
 })
 
-tl.to(letterQ, 1, {
+tl.to(letterQ, 3, {
     opacity: 1,
 }).to(letterQ, 2, {
     textShadow: ("0px 20px 18px rgb(65, 65, 65)"),
-}, "-=1").to(letterQ, 1, {
-    textShadow: ("0px 0px 0px #ffce5d"),
+}, "-=3").to(letterQ, 3, {
     color: "#2b2c2e"
-}).to(letterQ, 0.1, {
+}, '-=3').to(letterQ, 3, {
+    textShadow: ("0px 0px 0px #ffce5d")
+}, "-=1").to(letterQ, 1, {
     x: -50
-}).to(letters, {
+}, "-=1").to(letters, {
     duration: .2,
     opacity: 1,
     stagger: {
-        each: 0.03,
+        each: 0.09,
         from: 'end'
     }
 
-}, "=-0.15").to(letterQ, 0.1, {
-    delay: 1,
+}, "=-0.15").to(letterQ, 1, {
+    delay: 0.5,
     y: "-100%",
-}).to(letters, 0.1, {
+}).addLabel("welcome", "-=0.9").to(letters, 1, {
     stagger: {
         each: 0.03,
         from: 'start'
     },
     y: "-380%"
 
-}, "-=0.1").to(welcomeSection, 0.5, {
-    bottom: "0vh",
-    ease: Bounce.easeOut
-}, "-=0.2").from(welcomeSectionH1, 0.2, {
+}, "-=1").to(welcomeSection, 1.2, {
+    bottom: "-10vh",
+    ease: Back.easeOut.config(1.5)
+}, "welcome").from(welcomeSectionH1, 0.5, {
     opacity: 0,
-    y: 10
-}, "-=0.18").from(AllwelcomeSectionP, 0.2, {
+    y: 20
+}, "-=0.15").from(AllwelcomeSectionP, 0.5, {
     opacity: 0,
-    y: 10
-}, "-=0.18").from(btnWelcomeSection, 0.2, {
+    y: 20
+}, "-=0.15").from(btnWelcomeSection, 0.5, {
     opacity: 0,
-    y: 10
-}, "-=0.15")
+    y: 20
+}, "-=0.12");
+
+btnWelcomeSection.addEventListener('touchend', function (e) {
+    console.log('click');
+})

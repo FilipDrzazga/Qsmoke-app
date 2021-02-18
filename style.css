@@ -20,6 +20,8 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
+
+  /* overflow: hidden; */
 }
 /* HEADER & LOGO */
 
@@ -138,16 +140,16 @@ header {
 
 .section1-welcome {
   position: absolute;
-  bottom: -50vh;
+  bottom: -60vh;
   left: 0;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-content: center;
+  align-content: flex-start;
 
   width: 100vw;
-  height: 50vh;
+  height: 60vh;
 
   border-radius: 25px 25px 0 0;
 
