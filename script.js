@@ -1,4 +1,4 @@
-// plus/minus fuctions
+// costOfPack round function
 
 function roundPrecised(number, precision) {
 	var power = Math.pow(10, precision);
@@ -6,90 +6,111 @@ function roundPrecised(number, precision) {
   	return Math.round(number * power) / power;
 }
 
-function addSmokePerDay(){
+// Plus/minus event listeners
+
+
+document.getElementById('smokePerDayPlus').addEventListener('touchend', function(e){
     smokePerDay++;
     document.getElementsByClassName('section4-about-user__div1__p2')[0].innerHTML = smokePerDay;
-}
-function subtractSmokePerDay(){
+})
+document.getElementById('smokePerDayMinus').addEventListener('touchend',function(e){
     if(smokePerDay>0){
     smokePerDay--;
     document.getElementsByClassName('section4-about-user__div1__p2')[0].innerHTML = smokePerDay;
     }
-}
-function addCostOfPack(){
+})
+document.getElementById('costOfPackPlus').addEventListener('touchend',function(e){
     costOfPack += 0.1;
     costOfPack = roundPrecised(costOfPack,3);
     document.getElementsByClassName('section4-about-user__div2__p2')[0].innerHTML = costOfPack;
-}
-function subtractCostOfPack(){
+})
+document.getElementById('costOfPackMinus').addEventListener('touchend',function(e){
     if(costOfPack>0){
     costOfPack -= 0.1;
     costOfPack = roundPrecised(costOfPack,3);
     document.getElementsByClassName('section4-about-user__div2__p2')[0].innerHTML = costOfPack;
     }
-}
-function addcigarettesInPack(){
+})
+document.getElementById('cigarettesInPackPlus').addEventListener('touchend',function(e){
     cigarettesInPack++;
     document.getElementsByClassName('section4-about-user__div3__p2')[0].innerHTML = cigarettesInPack;
-}
-function subtractcigarettesInPack(){
+})
+document.getElementById('cigarettesInPackMinus').addEventListener('touchend',function(e){
     if(cigarettesInPack>0){
     cigarettesInPack--;
     document.getElementsByClassName('section4-about-user__div3__p2')[0].innerHTML = cigarettesInPack;
     }
-}
+})
 
-
-// plus/minus onclick
-
-
-document.getElementsByClassName('section4-about-user__div section4-about-user__div1')[0].getElementsByClassName('btn-plus')[0].onclick = addSmokePerDay;
-document.getElementsByClassName('section4-about-user__div section4-about-user__div1')[0].getElementsByClassName('btn-minus')[0].onclick = subtractSmokePerDay;
-document.getElementsByClassName('section4-about-user__div section4-about-user__div2')[0].getElementsByClassName('btn-plus')[0].onclick = addCostOfPack;
-document.getElementsByClassName('section4-about-user__div section4-about-user__div2')[0].getElementsByClassName('btn-minus')[0].onclick = subtractCostOfPack;
-document.getElementsByClassName('section4-about-user__div section4-about-user__div3')[0].getElementsByClassName('btn-plus')[0].onclick = addcigarettesInPack;
-document.getElementsByClassName('section4-about-user__div section4-about-user__div3')[0].getElementsByClassName('btn-minus')[0].onclick = subtractcigarettesInPack;
-
+// user class definition
 
 class user{
     constructor(userName,smokePerDay,costOfPack,cigarettesInPack){
         this.userName = userName;
         this.smokePerDay = smokePerDay;
         this.costOfPack = costOfPack;
-        this.cigarettesInPack - cigarettesInPack;
+        this.cigarettesInPack = cigarettesInPack;
+        this.data = {
+            userName: this.userName,
+            smokePerDay: this.smokePerDay,
+            costOfPack: this.costOfPack,
+            cigarettesInPack: this.cigarettesInPack
+        }
     }
 }
 
+// "Go forward" after providing user name
 
-document.getElementsByClassName('btn section2-form__btn')[0].onclick = 
-function setUserName(){
+document.getElementById('goForward').addEventListener('touchend',function(e){
+
     userName = document.getElementsByClassName('section2-form__input')[0].value;
-    currentUser = localStorage.getItem(userName);
-    if(!currentUser){ newUser=true; }
+    userData = JSON.parse(localStorage.getItem(userName));
+
+    if(!userData){ newUser=true;
+        
+        currentUser = new user(userName,0,16.70,0); // default data
+
+    }else{
+
+        newUser = false;
+        currentUser = new user(userData.userName,userData.smokePerDay,userData.costOfPack,userData.cigarettesInPack);
+
+    }
+
     document.getElementsByClassName('section5-main-screen__h2')[0].innerHTML = userName;
-}
+})
+
+// "I have to counted..."
+
+document.getElementById('iHaveToCounted').addEventListener('touchend',function(e){
+
+smokePerDay = currentUser.smokePerDay;
+costOfPack = currentUser.costOfPack;
+cigarettesInPack = currentUser.cigarettesInPack;
 
 
-document.getElementsByClassName('section3-your-way__div section3-your-way__div2')[0].onclick = 
-function setValues(){
-if(newUser){
-    smokePerDay = 0;
-    costOfPack = 15.50;
-    cigarettesInPack = 0;
-}else{
-    smokePerDay = currentUser.smokePerDay;
-    costOfPack = currentUser.costOfPack;
-    cigarettesInPack = currentUser.cigarettesInPack;
-    console.log('setVal');
-}
 document.getElementsByClassName('section4-about-user__div1__p2')[0].innerHTML = smokePerDay;
 document.getElementsByClassName('section4-about-user__div2__p2')[0].innerHTML = costOfPack;
 document.getElementsByClassName('section4-about-user__div3__p2')[0].innerHTML = cigarettesInPack;
-}
 
-function submitChanges(){
+})
 
-}
+// "Qsmoke" - submit changes
+
+document.getElementById('qsmoke').addEventListener('touchend', function(e){
+    
+    currentUser.smokePerDay = smokePerDay;
+    currentUser.costOfPack = costOfPack;
+    currentUser.cigarettesInPack = cigarettesInPack;
+    
+    if(!newUser){localStorage.removeItem(currentUser.userName);}
+
+    console.log('Qsmoke');
+    currentUser = new user(userName,smokePerDay,costOfPack,cigarettesInPack);
+    userJSON = JSON.stringify(currentUser.data);
+    localStorage.setItem(currentUser.userName,userJSON);
+})
+
 // Selector for logo
 const letterQ = document.querySelector('.letter__q');
 const letters = document.querySelectorAll('.letters span');
