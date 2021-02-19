@@ -16,7 +16,13 @@
   --reg-font: 400;
   --lig-font: 300;
 }
+body {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
 
+  /* overflow: hidden; */
+}
 /* HEADER & LOGO */
 
 header {
@@ -29,26 +35,63 @@ header {
 
 .letter__q {
   position: absolute;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0px;
-  margin: auto;
-  height: 100px;
-  width: 100px;
-  color: var(--black);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 120px;
+
+  color: var(--yellow);
+  font-family: var(--main-font);
+  font-weight: var(--bold-font);
+
+  text-shadow: 3px 0px 3px rgb(65, 65, 65);
+
+  opacity: 0;
 }
 
 .letters {
-  position: absolute;
-  top: 50%;
-  left: 48%;
-  font-size: 30px;
+  position: relative;
+  width: 100%;
+  height: 100vh;
   font-weight: var(--reg-font);
-}
-.letters span {
-  opacity: 0;
   color: var(--black);
+  font-size: 30px;
+}
+.letters__s {
+  position: absolute;
+  top: 54%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.letters__m {
+  position: absolute;
+  top: 54%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.letters__o {
+  position: absolute;
+  top: 54%;
+  left: 64%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.letters__k {
+  position: absolute;
+  top: 54%;
+  left: 69.5%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.letters__e {
+  position: absolute;
+  top: 54%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
 }
 
 /* ------------------------------- */
@@ -96,15 +139,17 @@ header {
 /* SECTION1-WELCOME */
 
 .section1-welcome {
-  position: relative;
+  position: absolute;
+  bottom: -60vh;
+  left: 0;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-content: center;
+  align-content: flex-start;
 
   width: 100vw;
-  height: 50vh;
+  height: 60vh;
 
   border-radius: 25px 25px 0 0;
 
@@ -138,7 +183,7 @@ header {
 
 .section1-welcome__btn {
   position: relative;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 /* .section1-welcome__btn::after {
