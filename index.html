@@ -27,76 +27,67 @@
         </ul>
     </nav>
     <section class="section1-welcome">
-        <h1 class="section1-welcome__h1">Hi,<span class="section1-welcome__span">there!</span></h1>
-        <p class="section1-welcome__p1">Let's make some changes for better life!</p>
-        <p class="section1-welcome__p2">I will show u how to do that.</p>
-        <p class="section1-welcome__p3">Let's do it!</p>
-        <button class="btn section1-welcome__btn">Get started...</button>
+        <h1 class="section1-welcome__h1" data-animationwelcome="animation">Hi,<span class="section1-welcome__span">there!</span></h1>
+        <p class="section1-welcome__p1" data-animationwelcome="animation">Let's make some changes for better life!</p>
+        <p class="section1-welcome__p2" data-animationwelcome="animation">I will show u how to do that.</p>
+        <p class="section1-welcome__p3" data-animationwelcome="animation">Let's do it!</p>
+        <button class="btn section1-welcome__btn" data-animationwelcome="animation">Get started...</button>
     </section>
-    <!-- <div class="animation-div"></div> -->
+    <div class="animation-div"></div>
     <section class="section2-form">
-        <h1 class="section2-form__h1">U <span>are</span></h1>
-        <h2 class="section2-form__h2">on the begining!</h2>
-        <p class="section2-form__p1">What is your name:</p>
-        <input class="section2-form__input" id="userName" type="text">
-        <button class="btn section2-form__btn" id = "goForward">Go forward...</button>
-        <div class="dots">
-            <div class="dot dot-1"></div>
-            <div class="dot dot-2"></div>
-            <div class="dot dot-3"></div>
-        </div>
+        <h1 class="section2-form__h1" data-animationform = "animation">U <span>are</span></h1>
+        <h2 class="section2-form__h2" data-animationform = "animation">on the begining!</h2>
+        <p class="section2-form__p1" data-animationform = "animation">What is your name:</p>
+        <input class="section2-form__input" data-animationform = "animation" id="userName" type="text">
+        <button class="btn section2-form__btn" data-animationform = "animation" id = "goForward">Go forward...</button>
     </section>
+    <div class="dots">
+        <div class="dot dot-1"></div>
+        <div class="dot dot-2"></div>
+        <div class="dot dot-3"></div>
+    </div>
 
     <section class="section3-your-way">
-        <h1 class="section3-your-way__h1">Take</h1>
-        <h2 class="section3-your-way__h2">your own way!</h2>
-        <p class="section3-your-way__p1">How much you smoke?</p>
-        <div class="section3-your-way__div section3-your-way__div1">
-            <p class="section3-your-way__div1__p1">Let's go!</p>
+        <h1 class="section3-your-way__h1" data-animationway="animation">Take</h1>
+        <h2 class="section3-your-way__h2" data-animationway="animation">your own way!</h2>
+        <p class="section3-your-way__p1" data-animationway="animation">How much you smoke?</p>
+        <div class="section3-your-way__div section3-your-way__div1" data-animationway="animation">
+            <p class="section3-your-way__div1__p1">Yeah, I know!</p>
             <p class="section3-your-way__div1__p2">Qsmoke...</p>
             <div>
                 <i class="fas fa-smoking"></i>
             </div>
         </div>
-        <div class="section3-your-way__div section3-your-way__div2" id = "iHaveToCounted">
+        <div class="section3-your-way__div section3-your-way__div2" data-animationway="animation" id = "iHaveToCounted">
             <p class="section3-your-way__div2__p1">I have to</p>
             <p class="section3-your-way__div2__p2">counted...</p>
             <div>
                 <i class="fas fa-calculator"></i>
             </div>
         </div>
-        <button class="btn section3-your-way__btn">Next step...</button>
-        <button class="section3-your-way__btnback"><i class="fas fa-long-arrow-alt-left"></i></button>
+        <button class="btn section3-your-way__btn" data-animationway="animation">Next step...</button>
     </section>
     <section class="section4-about-user">
-        <h1 class="section4-about-user__h1">Tell <span class="section4-about-user__span">me</span></h1>
-        <h2 class="section4-about-user__h2">something about you!</h2>
-        <div class="section4-about-user__div section4-about-user__div1">
+        <h1 class="section4-about-user__h1" data-animationabout="animation">Tell <span class="section4-about-user__span">me</span></h1>
+        <h2 class="section4-about-user__h2" data-animationabout="animation">something about you!</h2>
+        <div class="section4-about-user__div section4-about-user__div1" data-animationabout="animation">
             <p class="section4-about-user__div1__p1">smoke per day?</p>
-            <button class="btn-minus"id="smokePerDayMinus"><i class="fas fa-minus"></i></button>
             <p class="section4-about-user__div1__p2" id="smokePerDay">16</p>
-            <button class="btn-plus" id="smokePerDayPlus"><i class="fas fa-plus"></i></button>
         </div>
-        <div class="section4-about-user__div section4-about-user__div2">
+        <div class="section4-about-user__div section4-about-user__div2 "data-animationabout="animation">
             <p class="section4-about-user__div2__p1">cost of pack?</p>
-            <button class="btn-minus"><i class="fas fa-minus" id="costOfPackMinus"></i></button>
             <p class="section4-about-user__div2__p2" id="costOfPack">16.50</p>
-            <button class="btn-plus" id="costOfPackPlus"><i class="fas fa-plus"></i></button>
         </div>
-        <div class="section4-about-user__div section4-about-user__div3">
+        <div class="section4-about-user__div section4-about-user__div3 "data-animationabout="animation">
             <p class="section4-about-user__div3__p1">cigarett in pack?</p>
-            <button class="btn-minus" id="cigarettesInPackMinus"><i class="fas fa-minus"></i></button>
             <p class="section4-about-user__div3__p2" id="cigarettesInPack">20</p>
-            <button class="btn-plus" id="cigarettesInPackPlus"><i class="fas fa-plus"></i></button>
         </div>
-        <div class="section4-about-user__div section4-about-user__div4">
-            <p class="section4-about-user__div4__p1">cigarett in pack?</p>
-            <button class="btn-minus"><i class="fas fa-minus"></i></button>
-            <p class="section4-about-user__div4__p2">20</p>
-            <button class="btn-plus"><i class="fas fa-plus"></i></button>
+        <div class="section4-about-user__div section4-about-user__div4 "data-animationabout="animation">
+            <p class="section4-about-user__div4__p1">Qsmoke day?</p>
+            <p class="section4-about-user__div4__p2">Today</p>
         </div>
-        <button class="btn section4-about-user__btn" id="qsmoke">Qsmoke!</button>
-        <button class="section4-about-user__btnback" id="back"><i class="fas fa-long-arrow-alt-left"></i></button>
+        <button class="btn section4-about-user__btn" data-animationabout="animation" id="qsmoke">Qsmoke!</button>
+        <button class="section4-about-user__btnback" data-animationabout="animation" id="back"><i class="fas fa-long-arrow-alt-left"></i></button>
     </section>
     <section class="section5-main-screen">
         <h1 class="section5-main-screen__h1">Hello,</h1>
