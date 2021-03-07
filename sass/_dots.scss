@@ -1,0 +1,60 @@
+.dots {
+  position: absolute;
+
+  bottom: 5%;
+  left: 50%;
+  width: 50%;
+  height: 10px;
+
+  transform: translate(-50%, -50%);
+
+  flex-basis: 100%;
+
+  display: flex;
+  justify-content: right;
+  align-items: flex-end;
+  z-index: 999;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+
+  margin: 0 20px 0 20px;
+
+  border-radius: 50px;
+  background-color: $gray;
+
+  opacity: 0;
+}
+
+.dot-1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  background-color: $black;
+  z-index: 80;
+}
+
+.dot-2 {
+  margin-right: 26px;
+}
+
+@media (min-width: 359px) {
+  .dot-2 {
+    margin-right: 35px;
+  }
+}
+
+@media (min-width: 374px) {
+  .dot-2 {
+    margin-right: 40px;
+  }
+}
+
+@media (min-width: 410px) {
+  .dot-2 {
+    margin-right: 48px;
+  }
+}

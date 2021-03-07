@@ -1,0 +1,178 @@
+.section4-about-user {
+    position: absolute;
+
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+
+    font-family: $main-font;
+    color: $black;
+    background-color: $smoke;
+
+    opacity: 0;
+
+    &__h1 {
+        flex-basis: 100%;
+
+        margin-top: 30px;
+        padding-left: 30px;
+        font-size: 40px;
+
+        span {
+            font-size: 24px;
+        }
+    }
+
+    &__h2 {
+        flex-basis: 100%;
+
+        margin-top: -12px;
+        margin-bottom: 40px;
+        padding-left: 30px;
+
+        font-size: 24px;
+    }
+
+    &__div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: space-around;
+
+        width: 150px;
+        height: 90px;
+        margin: 5px 5px;
+
+        border-radius: 20px;
+        text-align: center;
+
+        font-weight: 600;
+    }
+
+    &__div1 {
+        background-color: $green;
+
+        &__p1 {
+            flex-basis: 100%;
+        }
+
+        &__input1[type=number] {
+            background-color: $smoke;
+            text-align: center;
+            width: 125px;
+            border-radius: 10px;
+            border: none;
+            padding: 2px;
+            font-size: 20px;
+            font-family: $main-font;
+            font-weight: $bold-font;
+            appearance: none;
+            -moz-appearance: textfield;
+        }
+
+    }
+
+    &__div2 {
+        background-color: $yellow;
+
+        &__p1 {
+            flex-basis: 100%;
+        }
+
+        &__input1[type=number] {
+            background-color: $smoke;
+            text-align: center;
+            width: 125px;
+            border-radius: 10px;
+            border: none;
+            padding: 2px;
+            font-size: 20px;
+            font-family: $main-font;
+            font-weight: $bold-font;
+            appearance: none;
+            -moz-appearance: textfield;
+        }
+
+    }
+
+    &__div3 {
+        background-color: $blue;
+
+        &__p1 {
+            flex-basis: 100%;
+        }
+
+        &__input1[type=number] {
+            background-color: $smoke;
+            text-align: center;
+            width: 125px;
+            border-radius: 10px;
+            border: none;
+            padding: 2px;
+            font-size: 20px;
+            font-family: $main-font;
+            font-weight: $bold-font;
+            appearance: none;
+            -moz-appearance: textfield;
+        }
+
+    }
+
+    &__div4 {
+        background-color: $green;
+
+        &__p1 {
+            flex-basis: 100%;
+        }
+
+        &__p2 {
+            margin: 0 25px;
+            font-size: 25px;
+        }
+    }
+
+    &__btn {
+        width: 150px;
+        margin-top: 30px;
+    }
+
+    &__btnback {
+        margin: 5% 50% 0 50%;
+        padding: 10px 30px;
+
+        background-color: transparent;
+        border: none;
+
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 359px) {
+
+    .section4-about-user {
+
+        &__h1 {
+            margin-top: 50px;
+        }
+
+        &__btn {
+            margin-top: 50px;
+        }
+    }
+}
+
+@media (min-width: 374px) {
+
+    .section4-about-user {
+
+        &__h1 {
+            margin-top: 70px;
+        }
+    }
+}

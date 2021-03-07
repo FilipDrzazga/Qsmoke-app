@@ -1,0 +1,73 @@
+header {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  background-color: $yellow;
+}
+
+.letter__q {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 120px;
+
+  color: $yellow;
+  font-family: $main-font;
+  font-weight: $bold-font;
+
+  text-shadow: 3px 0px 3px rgb(65, 65, 65);
+
+  opacity: 0;
+}
+
+.letters {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  font-weight: $reg-font;
+  color: $black;
+  font-size: 30px;
+
+  &__s {
+    position: absolute;
+    top: 54%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+
+  &__m {
+    position: absolute;
+    top: 54%;
+    left: 57%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+
+  &__o {
+    position: absolute;
+    top: 54%;
+    left: 64%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+
+  &__k {
+    position: absolute;
+    top: 54%;
+    left: 69.5%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+
+  &__e {
+    position: absolute;
+    top: 54%;
+    left: 75%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+  }
+}
